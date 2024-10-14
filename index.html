@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог ПВХ пленки</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Светло-серый фон */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .product img:hover {
+            transform: scale(1.05); /* Увеличение картинки при наведении */
+        }
+
+        .product h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .product p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #20b358;
+        }
+
+        .input-meter {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 14px;
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Модальное окно для отображения увеличенной картинки */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            margin: auto;
+        }
+
+        /* Кнопка закрытия модального окна */
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .catalog {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .catalog {
+                grid-template-columns: 1fr;
+            }
+
+            .product img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Акция! Пленка ПВХ от 1300 тг до 1600 тг</h1>
+
+<div class="catalog">
+
+    <!-- Продукт 1 -->
+    <div class="product">
+        <img src="images/орех хикорри rm.png" alt="Орех Хикори RM" onclick="openModal('images/орех хикорри rm.png')">
+        <h2>Орех Хикори RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <!-- Поле для ввода метража -->
+        <input type="number" class="input-meter" id="meter1" placeholder="Введите метраж">
+        <!-- Кнопка отправки заявки через WhatsApp -->
+        <a class="whatsapp-button" onclick="sendWhatsApp('Орех Хикори RM', 'meter1')">Отправить заявку</a>
+    </div>
+
+    <!-- Продукт 2 -->
+    <div class="product">
+        <img src="images/ясень белый теплый RM.png" alt="Ясень Белый Теплый RM" onclick="openModal('images/ясень белый теплый RM.png')">
+        <h2>Ясень Белый Теплый RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter2" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Ясень Белый Теплый RM', 'meter2')">Отправить заявку</a>
+    </div>
+
+    <!-- Продукт 3 -->
+    <div class="product">
+        <img src="images/шитаки софт RM.png" alt="Шитаки Софт RM" onclick="openModal('images/шитаки софт RM.png')">
+        <h2>Шитаки Софт RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter3" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Шитаки Софт RM', 'meter3')">Отправить заявку</a>
+    </div>
+
+
+    <div class="product">
+        <img src="images/черное дерево RM.png" alt="Чёрное Дерево RM" onclick="openModal('images/черное дерево RM.png')">
+        <h2>Чёрное Дерево RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter4" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Чёрное Дерево RM', 'meter4')">Отправить заявку</a>
+    </div>
+
+    <div class="product">
+        <img src="images/серый софт RM.png" alt="Серый Софт RM" onclick="openModal('images/серый софт RM.png')">
+        <h2>Серый Софт RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter5" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Серый Софт RM', 'meter5')">Отправить заявку</a>
+    </div>
+
+
+ <div class="product">
+        <img src="images/серое дерево RM.png" alt="Серое Дерево RM" onclick="openModal('images/серое дерево RM.png')">
+        <h2>Серое Дерево RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter6" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Серое Дерево RM', 'meter6')">Отправить заявку</a>
+    </div>
+
+
+
+ <div class="product">
+        <img src="images/Графит софт RM.png" alt="Графит Софт RM" onclick="openModal('images/Графит софт RM.png')">
+        <h2>Графит Софт RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter7" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Графит Софт RM', 'meter7')">Отправить заявку</a>
+    </div>
+
+     <div class="product">
+        <img src="images/грей софт RM.png" alt="Грей Софт RM" onclick="openModal('images/грей софт RM.png')">
+        <h2>Грей Софт RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter8" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Грей Софт RM', 'meter8')">Отправить заявку</a>
+    </div>
+
+
+<div class="product">
+        <img src="images/дуб вотан RM.png" alt="Дуб Вотан RM" onclick="openModal('images/дуб вотан RM.png')">
+        <h2>Дуб Вотан RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter9" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Дуб Вотан RM', 'meter9')">Отправить заявку</a>
+    </div>
+
+    <div class="product">
+        <img src="images/кофе софт RM.png" alt="Кофе Софт RM" onclick="openModal('images/кофе софт RM.png')">
+        <h2>Кофе Софт RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter10" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Кофе Софт RM', 'meter10')">Отправить заявку</a>
+    </div>
+
+
+    <div class="product">
+        <img src="images/крем софтRM.png" alt="Крем Софт RM" onclick="openModal('images/крем софтRM.png')">
+        <h2>Крем Софт RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter11" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Крем Софт RM', 'meter11')">Отправить заявку</a>
+    </div>
+
+
+     <div class="product">
+        <img src="images/АРЛАС БЁРЕЗА RM.png" alt="Арлас Берёза RM" onclick="openModal('images/АРЛАС БЁРЕЗА RM.png')">
+        <h2>Арлас Берёза RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter12" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Арлас Берёза RM', 'meter12')">Отправить заявку</a>
+    </div>
+
+
+    <div class="product">
+        <img src="images/ясень белый холодный rm.png" alt="Ясень Белый Холодный RM" onclick="openModal('images/ясень белый холодный rm.png')">
+        <h2>Ясень Белый Холодный RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter13" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Ясень Белый Холодный RM', 'meter13')">Отправить заявку</a>
+    </div>
+
+
+    <div class="product">
+        <img src="images/дуб стоун.png" alt="Дуб Стоун RM" onclick="openModal('images/дуб стоун.png')">
+        <h2>Дуб Стоун RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter14" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Дуб Стоун RM', 'meter14')">Отправить заявку</a>
+    </div>
+
+
+      <div class="product">
+        <img src="images/дуб каньон rm.png" alt="Дуб Каньон RM" onclick="openModal('images/дуб каньон rm.png')">
+        <h2>Дуб Каньон RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter15" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Дуб Каньон RM', 'meter15')">Отправить заявку</a>
+    </div>
+
+
+
+ <div class="product">
+        <img src="images/елочка какао rm.png" alt="Ёлочка Какао RM" onclick="openModal('images/елочка какао rm.png')">
+        <h2>Ёлочка Какао RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter16" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Ёлочка Какао RM', 'meter16')">Отправить заявку</a>
+    </div>
+
+
+ <div class="product">
+        <img src="images/дуб флекс rm.png" alt="Дуб Флекс RM" onclick="openModal('images/дуб флекс rm.png')">
+        <h2>Дуб Флекс RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter17" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Дуб Флекс RM', 'meter17')">Отправить заявку</a>
+    </div>
+
+     <div class="product">
+        <img src="images/дуб торро rm.png" alt="дуб флекс rm" onclick="openModal('images/дуб торро rm.png')">
+        <h2>Дуб Торро RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter18" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('дуб торро rm', 'meter18')">Отправить заявку</a>
+    </div>
+
+
+    <div class="product">
+        <img src="images/дуб европейский rm.png" alt="Дуб Европейский RM" onclick="openModal('images/дуб европейский rm.png')">
+        <h2>Дуб Европейский RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter19" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Дуб Европейский RM', 'meter19')">Отправить заявку</a>
+    </div>
+
+
+
+ <div class="product">
+        <img src="images/секвойя брауни rm.png" alt="Cеквойя Брауни RM" onclick="openModal('images/секвойя брауни rm.png')">
+        <h2>Cеквойя Брауни RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter19" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Cеквойя Брауни RM', 'meter19')">Отправить заявку</a>
+    </div>
+
+
+    <div class="product">
+        <img src="images/елочка крем rm.png" alt="елочка крем rm" onclick="openModal('images/елочка крем rm.png')">
+        <h2>Ёлочка Крем RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter20" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Ёлочка Крем RM', 'meter20')">Отправить заявку</a>
+    </div>
+
+
+
+  <div class="product">
+        <img src="images/крем фактурный.png" alt="Крем Фактурный RM" onclick="openModal('images/крем фактурный.png')">
+        <h2>Крем Фактурный RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter21" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Крем Фактурный RM', 'meter21')">Отправить заявку</a>
+    </div>
+
+
+     <div class="product">
+        <img src="images/Лен фаткурыйн rm.png" alt="Лен Фактурный RM" onclick="openModal('images/Лен фаткурыйн rm.png')">
+        <h2>Лен Фактурный RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter22" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Лен Фактурный RM', 'meter22')">Отправить заявку</a>
+    </div>
+
+
+<div class="product">
+        <img src="images/пудра фактурная рм.png" alt="Пудра Фактурная RM" onclick="openModal('images/пудра фактурная рм.png')">
+        <h2>Пудра Фактурная RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter23" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Пудра Фактурная RM', 'meter23')">Отправить заявку</a>
+    </div>
+
+<div class="product">
+        <img src="images/серая фактурная рм.png" alt="Cерая фактурная RM" onclick="openModal('images/серая фактурная рм.png')">
+        <h2>Cерая фактурная RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter24" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Cерая фактурная RM', 'meter24')">Отправить заявку</a>
+    </div>
+
+    <div class="product">
+        <img src="images/тростник фактурный рм.png" alt="Тростник Фактурный RM" onclick="openModal('images/тростник фактурный рм.png')">
+        <h2>Тростник Фактурный RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter25" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Тростник Фактурный RM', 'meter25')">Отправить заявку</a>
+    </div>
+
+
+     <div class="product">
+        <img src="images/шторм софт рм.png" alt="Шторм Софт RM" onclick="openModal('images/шторм софт рм.png')">
+        <h2>Шторм Софт RM</h2>
+        <p>Толщина: 0.26 мм</p>
+        <input type="number" class="input-meter" id="meter26" placeholder="Введите метраж">
+        <a class="whatsapp-button" onclick="sendWhatsApp('Шторм Софт RM', 'meter26')">Отправить заявку</a>
+    </div>
+
+    <!-- Продукты 4-30 (добавляем аналогично) -->
+
+</div>
+
+<!-- Модальное окно для увеличения изображений -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="">
+</div>
+
+<script>
+    // Открытие изображения в модальном окне
+    function openModal(imageUrl) {
+        document.getElementById("modalImage").src = imageUrl;
+        document.getElementById("imageModal").style.display = "block";
+    }
+
+    // Закрытие модального окна
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+
+    // Функция для отправки WhatsApp сообщения с введенным метражом
+    function sendWhatsApp(productName, inputId) {
+        var meter = document.getElementById(inputId).value;
+        if (meter) {
+            var message = `Хочу заказать ${productName}. Количество метров: ${meter}.`;
+            var url = `https://wa.me/77074052052?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        } else {
+            alert('Пожалуйста, введите метраж.');
+        }
+    }
+</script>
+
+</body>
+</html>
